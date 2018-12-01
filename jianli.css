@@ -4,54 +4,148 @@
     clear: both;
   }
   a{
-    text-decoration: none;
+      text-decoration: none;
   }
-  body{
-    margin: 0;
+  *{
+      margin: 0;
+      padding: 0;
+  }
+  .logo{
+      float: left;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 22px;
+      padding-top: 6px;
+      padding-bottom: 6px;
   }
   .topNavBar{
-      margin-top: 20px;
-      margin-bottom: 20px;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+  }
+  body{
+      margin: 0;
+  }
+  .topinner{
       padding-left: 16px;
       padding-right: 16px;
   }
-  .topNavBar .logo {
-      font-size: 24px;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      padding-top: 2px;
-      padding-bottom: 2px;
-  }
   .topNavBar .logo .rs{
-      margin-right: 2px;
-      color: #e6686a;
+      color:  #e6686a;
   }
   .topNavBar .logo .card{
       color:  #9A9DA2;
+      padding-left: 1px;
   }
   .topNavBar nav{
-      padding-top: 2px;
-      padding-bottom: 1px;
+      float: right;
+      padding-top: 4px;
+      padding-bottom: 3px;
   }
   .topNavBar nav ul{
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-  }
-  .topNavBar nav ul>li>a{
-      font-size: 12px;
-      color: gray;
-      font-weight:bold;
-      border-bottom: 3px solid transparent;
-      border-top: 3px solid transparent;
-      padding-top: 4px;
-      padding-bottom: 4px;
-      display: block;
+      list-style: none;
+      padding: 0;
+      margin: 0;
   }
   .topNavBar nav ul>li{
       float: left;
       margin-left: 17px;
       margin-right: 17px;
   }
-  .topNavBar nav ul>li>a:hover{
-      border-bottom: 3px solid #DC6465;
+  .topNavBar nav ul>li>a{
+      font-size: 14px;
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+      border-top: 3px solid transparent;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      color: #5f6163;
+      display: block;
   }
+  .topNavBar nav ul>li>a:hover{
+    border-bottom: 3px solid rgb(198, 241, 230);
+  }
+  .banner{
+      height: 400px;
+      background-image: url(./img/wallhaven-191840.jpg);
+      background-position: center center;
+      background-size: cover;
+  }
+  .mask{
+      height: 400px;
+      background-color: rgba(0, 0, 0, 0.2)
+  }
+  .usercard{
+      border: 1px solid red;
+      max-width: 940px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .usercard .welcome{
+      background-color: #e6686a;
+      color: white;
+      padding: 2px 16px;
+      line-height: 18px;
+      display: inline-block;
+      margin-bottom: 10px;     
+  }
+  .usercard .picture{
+      float: left;
+  }
+  .usercard .text{
+      float: left;
+      padding-left: 66px;
+      width: 500px;
+  }
+  .usercard .text h1{
+      margin-top: 16px;
+      margin-bottom: 8px;
+  }
+.usercard .pictureandtext{
+    padding: 50px;
+}
+.usercard svg{
+    width: 36px;
+    height: 36px;
+    fill: rgb(119, 112, 112);
+    vertical-align: top;
+}
+hr{
+    height: 0;
+    border: none;
+    border-top: 1px solid rgb(189, 178, 178);
+}
+.usercard .text hr{
+    margin: 20px 0;
+}
+.usercard dt{
+    float: left;
+    width: 30%;
+    padding: 6px 0;
+    font-size: 16px;
+}
+.usercard dd{
+    float: left;
+    width: 70%;
+    padding: 6px 0;
+    color: #848b9c;
+}
+.usercard  footer.media{
+    background-color: #eaf7b0;
+    text-align: center;
+}
+.usercard  footer.media a{
+    display: inline-block;
+    border-radius: 50%;
+    width: 40px;
+    line-height: 30px;
+    padding: 5px 0;
+    margin: 2px 27px;
+}
+.usercard  footer.media a:hover{
+    background: rgb(143, 202, 219);
+}
