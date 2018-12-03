@@ -6,6 +6,12 @@
   a{
       text-decoration: none;
   }
+  ul{
+    list-style: none;
+  }
+  h1,h2,h3, h4,h5,h6{
+      font-weight: normal;
+  }
   *{
       margin: 0;
       padding: 0;
@@ -29,6 +35,7 @@
   }
   body{
       margin: 0;
+      background:#EFEFEF; 
   }
   .topinner{
       padding-left: 16px;
@@ -47,7 +54,6 @@
       padding-bottom: 3px;
   }
   .topNavBar nav ul{
-      list-style: none;
       padding: 0;
       margin: 0;
   }
@@ -67,11 +73,11 @@
       display: block;
   }
   .topNavBar nav ul>li>a:hover{
-    border-bottom: 3px solid rgb(198, 241, 230);
+      border-bottom: 3px solid rgb(180, 145, 145);
   }
   .banner{
       height: 400px;
-      background-image: url(./img/wallhaven-191840.jpg);
+      background-image: url(img/wallhaven-280512.jpg);
       background-position: center center;
       background-size: cover;
   }
@@ -80,16 +86,16 @@
       background-color: rgba(0, 0, 0, 0.2)
   }
   .usercard{
-      border: 1px solid red;
-      max-width: 940px;
+      max-width: 780px;
       margin-left: auto;
       margin-right: auto;
+      box-shadow: 8px 32px 120px -34px rgba(173,164,173,1);
   }
   .usercard .welcome{
-      background-color: #e6686a;
+      background-color: #a1add1;
       color: white;
-      padding: 2px 16px;
-      line-height: 18px;
+      padding: 9px 16px;
+      line-height: 16px;
       display: inline-block;
       margin-bottom: 10px;     
   }
@@ -99,7 +105,7 @@
   .usercard .text{
       float: left;
       padding-left: 66px;
-      width: 500px;
+      width: 360px;
   }
   .usercard .text h1{
       margin-top: 16px;
@@ -109,8 +115,8 @@
     padding: 50px;
 }
 .usercard svg{
-    width: 36px;
-    height: 36px;
+    width: 27px;
+    height: 27px;
     fill: rgb(119, 112, 112);
     vertical-align: top;
 }
@@ -125,27 +131,157 @@ hr{
 .usercard dt{
     float: left;
     width: 30%;
-    padding: 6px 0;
+    padding: 8px 0;
     font-size: 16px;
 }
 .usercard dd{
     float: left;
     width: 70%;
-    padding: 6px 0;
+    padding: 8px 0;
     color: #848b9c;
 }
 .usercard  footer.media{
-    background-color: #eaf7b0;
+    background-color: #ced1ce;
     text-align: center;
 }
 .usercard  footer.media a{
     display: inline-block;
     border-radius: 50%;
-    width: 40px;
+    width: 45px;
     line-height: 30px;
     padding: 5px 0;
     margin: 2px 27px;
 }
 .usercard  footer.media a:hover{
-    background: rgb(143, 202, 219);
+    background: rgb(170, 188, 216);
+}
+body .introduce{
+    margin-top:-85px;
+}
+.introduce .downloadjianli{
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    display: inline-block;
+    padding: 17px 50px;
+    color: #406b92;
+    border:1px solid #cdcfd1;
+    border-radius: 4px;
+    margin:28px 0;
+}
+.introduce .downloadjianliwai{
+    text-align: center;
+}
+.introduce .downloadjianli:hover{
+    box-shadow: 6px 4px 19px 1px rgba(0,0,0,0.31);
+    transition: box-shadow 0.4s;
+}
+.introduce .selfIntroduction{
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+}
+.skills,
+.portfolio{
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+.skills h2,
+.portfolio h2{
+    text-align: center;
+    font-size: 20px;
+}
+.skills .skillslist{
+    background: rgb(224, 231, 253);
+    box-shadow: 6px 4px 19px 1px rgba(0,0,0,0.2);
+    padding:20px 10px 0;
+    margin-top: 27px;
+}
+.skills .skillslist>li{
+    float: left;
+    width: 47%;
+    box-sizing: border-box;
+}
+.skills .progressBar{
+    height: 8px;
+    background:  rgb(168, 167, 252);
+    border-radius: 6px;
+    margin: 10px 0 27px;
+}
+.skills .progressBar .progress{
+    background: #eed099;
+    width: 70%;
+    height: 100%;
+    border-radius: 6px;
+}
+.skills .skillslist>li:nth-child(even){
+    float: right;
+}
+.skills h4{
+    font-size: 12px;
+    line-height: 1.1;
+}
+.portfolio{
+    text-align: center;
+}
+.portfolio .portfoliolist{
+    display: inline-block;
+    vertical-align: top;
+}
+.portfolio .portfoliolist>li{
+    float: left;
+    margin-left: 27px; 
+    cursor: default;
+}
+.portfolio .portfoliolist>li:nth-child(1){
+    margin-left: 0;
+}
+.portfolio nav{
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    margin-top: 22px;
+}
+.portfolio .bar{
+    background:  rgb(168, 167, 252);
+    height: 5px;
+    margin-top: 6px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+}
+.portfolio .bar .bar-inner{
+    height: 100%;
+    border-radius: 6px;
+    margin-left: 0;
+    width: 68px;
+    background: #e6686a;
+    transition: all 0.3s;
+}
+.portfolio  .bar.state-1 .bar-inner{
+    margin-left: 0;
+    width: 68px;
+    background: #e6686a;
+}
+.portfolio .bar.state-2 .bar-inner{
+    background: #e6686a;
+    margin-left: 68px;
+    width: 55px;
+}
+.portfolio .bar.state-3 .bar-inner{
+    background: #e6686a;
+    margin-left: 125px;
+    width: 75px;
+}
+.portfolio .works{
+    position: relative;
+    height: 597px;
+}
+.portfolio .works .big,
+.portfolio .works .small{
+    position: absolute;
 }
