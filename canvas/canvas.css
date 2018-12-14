@@ -1,0 +1,20 @@
+#canvas{
+    background:#008000;
+  }
+  body{
+    margin:0;
+  }
+ .actions{
+    position:fixed;
+    top:0;
+    left:0;
+  }
+  .actions> #brush{
+      display: none;
+  }
+  .actions.x > #brush{
+      display: inline-block;
+  }
+  .actions.x > #rubbish{
+      display: none;
+  }
