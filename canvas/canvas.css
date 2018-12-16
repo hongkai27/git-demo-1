@@ -16,6 +16,7 @@ ul,ol{
     position: fixed;
     top: 0;
     left: 0;
+    cursor:default;
   }
   body{
     margin:0;

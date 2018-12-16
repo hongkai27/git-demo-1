@@ -69,10 +69,10 @@
                 var y = a.touches[0].clientY;
                 if (rubberEnabled) {
                     using = true;
-                    context.clearRect(x, y, 16, 16)
+                    context.clearRect(x, y, 20, 20);
                 } else {
                     using = true;
-                    lastPoint = { "x": x, "y": y }
+                    lastPoint = { "x": x, "y": y };
                 }
             }
             canvas.ontouchmove = function (a) {
@@ -80,7 +80,7 @@
                 var y = a.touches[0].clientY;
                 if (rubberEnabled) {
                     if (using) {
-                        context.clearRect(x, y, 16, 16)
+                        context.clearRect(x, y, 20, 20);
                     }
                 } else {
                     if (using) {
@@ -99,10 +99,10 @@
                 var y = a.clientY;
                 if (rubberEnabled) {
                     using = true;
-                    context.clearRect(x, y, 16, 16)
+                    context.clearRect(x, y, 20, 20);
                 } else {
                     using = true;
-                    lastPoint = { "x": x, "y": y }
+                    lastPoint = { "x": x, "y": y };
                 }
 
             }
@@ -111,7 +111,7 @@
                 var y = a.clientY;
                 if (rubberEnabled) {
                     if (using) {
-                        context.clearRect(x, y, 16, 16)
+                        context.clearRect(x, y, 20, 20);
                     }
                 } else {
                     if (using) {
@@ -147,7 +147,7 @@
         clear.onclick = function () {
             context.clearRect(0, 0, canvas.width, canvas.height);
         }
-        download.onclick = function(){
+        download.onclick = function () {
             var url = canvas.toDataURL('image/png');
             var a = document.createElement('a');
             document.body.appendChild(a);
