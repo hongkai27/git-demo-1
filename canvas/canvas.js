@@ -2,7 +2,7 @@ var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 var using = false;
 var lastPoint = { "x": undefined, "y": undefined };
-var rubbishEnabled = false;
+var rubberEnabled = false;
 autosetCanvas()
 /*******************/
 function autosetCanvas() {
@@ -30,7 +30,7 @@ function drawline(x1, y1, x2, y2) {
 canvas.onmousedown = function (a) {
     var x = a.clientX;
     var y = a.clientY;
-    if (rubbishEnabled) {
+    if (rubberEnabled) {
         using = true;
         context.clearRect(x, y, 16, 16)
     } else {
@@ -42,7 +42,7 @@ canvas.onmousedown = function (a) {
 canvas.onmousemove = function (a) {
     var x = a.clientX;
     var y = a.clientY;
-    if (rubbishEnabled) {
+    if (rubberEnabled) {
         if (using) {
             context.clearRect(x, y, 16, 16)
         }
@@ -58,11 +58,4 @@ canvas.onmousemove = function (a) {
 canvas.onmouseup = function (a) {
     using = false;
 }
-rubbish.onclick = function () {
-    rubbishEnabled = true;
-    actions.className = "actions x";
-}
-brush.onclick = function () {
-    rubbishEnabled = false;
-    actions.className = "actions";
-}
+

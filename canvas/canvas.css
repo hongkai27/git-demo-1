@@ -1,5 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ul,ol{
+    list-style: none;
+}
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
 #canvas{
-    background:#008000;
+    background:white;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
   body{
     margin:0;
@@ -8,13 +24,43 @@
     position:fixed;
     top:0;
     left:0;
+    padding: 20px;
   }
-  .actions> #brush{
-      display: none;
-  }
-  .actions.x > #brush{
-      display: inline-block;
-  }
-  .actions.x > #rubbish{
-      display: none;
-  }
+  .actions .icon{
+    width: 1.2em;
+    height: 1.2em;
+    transition:all 0.4s;
+    margin: 0 6px;
+}
+.actions .icon.active{
+    fill: rgb(209, 68, 68);
+    transform: scale(1.2);
+}
+.colors{
+    position: fixed;
+    top: 60px;
+    margin-left: 22px;
+}
+.colors li{
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    margin: 10px 0;
+    transition:all 0.4s;
+}
+.colors li.active{
+    transform: scale(1.2);
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    margin: 10px 0;
+}
+.colors li.red{
+    background: red;
+}
+.colors li.green{
+    background: green;
+}
+.colors li.blue{
+    background: blue;
+}
