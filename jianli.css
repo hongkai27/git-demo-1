@@ -24,14 +24,18 @@
       padding-bottom: 6px;
   }
   .topNavBar{
-      padding-left: 0;
-      padding-right: 0;
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding: 20px 0;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
+      transition: all 0.3s;
+  }
+  .topNavBar.sticky{
+      background: rgb(245, 248, 247);
+      padding: 12px 0;
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+      
   }
   body{
       margin: 0;
@@ -57,23 +61,65 @@
       padding: 0;
       margin: 0;
   }
-  .topNavBar nav ul>li{
+  .topNavBar nav>ul>li{
       float: left;
       margin-left: 17px;
       margin-right: 17px;
+      position: relative;
   }
-  .topNavBar nav ul>li>a{
+  .topNavBar nav ul li a{
       font-size: 14px;
       font-weight: bold;
       border-bottom: 3px solid transparent;
       border-top: 3px solid transparent;
       padding-top: 4px;
       padding-bottom: 4px;
-      color: #5f6163;
+      color: #777373;
       display: block;
+      position: relative;
   }
-  .topNavBar nav ul>li>a:hover{
-      border-bottom: 3px solid rgb(180, 145, 145);
+  .topNavBar nav ul>li.active>a::after{
+      content: '';
+      display: block;
+      top: 100%;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: #e6686a;
+      animation:menuSlide 0.3s;
+  }
+  @keyframes menuSlide{
+      0%{
+          width: 0;
+      }
+      100%{
+          width: 100%;
+      }
+  }
+  .topNavBar .submenu{
+      display: none;
+      position: absolute;
+      top: 100%;
+      background: #caebba;
+      color: #3e485a;
+      cursor: default;
+  }
+  @keyframes submenuSlide{
+      0%{
+          margin-right: 100%;
+      }
+      100%{
+          margin-right: 0%;
+      }
+  }
+  .topNavBar li.active>.submenu{
+      display: block;
+      animation:submenuSlide 0.3s;
+  }
+  .topNavBar .submenu>li{
+      white-space: nowrap;
+      padding: 8px;
   }
   .banner{
       height: 400px;
@@ -217,7 +263,6 @@ body .introduce{
 }
 .skills .progressBar .progress{
     background: #eed099;
-    width: 70%;
     height: 100%;
     border-radius: 6px;
 }
