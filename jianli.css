@@ -78,7 +78,8 @@
       display: block;
       position: relative;
   }
-  .topNavBar nav ul>li.active>a::after{
+  .topNavBar nav ul>li.active>a::after,
+  .topNavBar nav ul>li.light>a::after{
       content: '';
       display: block;
       top: 100%;
@@ -121,6 +122,14 @@
       white-space: nowrap;
       padding: 8px;
   }
+  [data-x].offset{
+      transform: translateY(66px);
+  }
+  [data-x]{
+    
+    transition: all 0.7s;
+  }
+  
   .banner{
       height: 400px;
       background-image: url(img/wallhaven-280512.jpg);
@@ -237,7 +246,7 @@ body .introduce{
     max-width: 780px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 .skills h2,
 .portfolio h2{
@@ -260,11 +269,17 @@ body .introduce{
     background:  rgb(168, 167, 252);
     border-radius: 6px;
     margin: 10px 0 27px;
+    overflow: hidden;
 }
 .skills .progressBar .progress{
-    background: #eed099;
+    background: #ee806c;
     height: 100%;
     border-radius: 6px;
+    transform: translateX(0);
+    transition: all 1s;
+}
+.skills.offset .progressBar .progress{
+    transform: translateX(-100%);
 }
 .skills .skillslist>li:nth-child(even){
     float: right;
