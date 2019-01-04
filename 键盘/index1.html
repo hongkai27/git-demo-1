@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我的导航</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./style.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <div class="wapper" id="baba"></div>
+    </main>
+    <footer></footer>
+</body>
+<script>
+    var keys = {
+        '0': ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+        '1': ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+        '2': ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
+        'length': 3
+    }
+    var hash = {
+        'q': 'qq.com',
+        'w': 'weibo.com',
+        'e': 'ele.me',
+        'r': 'javascript.ruanyifeng.com',
+        'i': 'iqiyi.com',
+        'm': 'meituan.com',
+        'a': 'alibaba.com',
+        'j': 'jd.com'
+    }
+
+    var hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null')
+    if (hashInLocalStorage) {
+        hash = hashInLocalStorage
+    }
+
+    // 遍历 keys ,生成 kbd 标签
+    var index = 0
+    while (index < keys['length']) { // 取值为 0 1 2 
+        var div1 = document.createElement('div')
+        baba.appendChild(div1)
+        var row = keys[index]  // 取值为 第一个数组 第二个数组 第三个数组
+        var index2 = 0
+        while (index2 < row['length']) { // 第一次取值为0-9 第二次为0-8 第三次为0-6
+            var kbd1 = document.createElement('kbd')
+            kbd1.textContent = row[index2]
+            kbd1.className = 'key'
+            div1.className = 'row'
+            var span = document.createElement('span')
+            var buttonx = document.createElement('button')
+            buttonx.textContent = '编辑'
+            buttonx.id = row[index2]
+            var img = document.createElement('img')
+            if (hash[row[index2]]) {
+                img.src = 'http://' + hash[row[index2]] + '/favicon.ico'
+            } else {
+                img.src = './星星.png'
+            }
+            img.onerror = function (error) {
+                error.target.src = './星星.png'
+            }
+            buttonx.onclick = function (xyz) {
+                var key = xyz['target']['id']// 取值就是q w e 等等，表示用户点击的元素
+                var x = prompt('给我一个网址')// 先把用户输入的网址存到x里面
+                hash[key] = x //再令哈希里面的key等于x 这步的操作表示哈希的变更
+                LocalStorage.setItem('zzz', JSON.stringify(hash))
+                console.log(hash)
+            }
+            kbd1.appendChild(img)
+            kbd1.appendChild(span)
+            span.appendChild(buttonx)
+            div1.appendChild(kbd1)
+            index2 = index2 + 1
+        }
+        index = index + 1
+    }
+
+    document.onkeypress = function (xyz) {
+        var key = xyz['key'] // 在console中xyz的key显示的就是按的键对应的字母
+        var website = hash[key] // 令网站为哈希key里面对应的网站
+        window.open('http://' + website, '_blank')
+    }
+
+
+
+</script>
+
+</html>

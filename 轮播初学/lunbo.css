@@ -1,0 +1,11 @@
+.window{
+    width: 300px;
+    overflow: hidden;
+}
+.images{
+    display:flex;
+    transition: all 1s;
+}
+.red{
+    color: red;
+}
