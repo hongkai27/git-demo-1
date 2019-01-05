@@ -23,10 +23,10 @@ var time = setInterval(() => {       //相当于定闹钟
 }, 2500)
 
 //鼠标移动事件
-$('.window').on('mouseenter', function () {
-    window.clearInterval(time)
+$('.mask').on('mouseenter', function () {
+    window.clearInterval(time)//window是系统属性，也可以不加（window.)，和上面的选择器无关
 })
-$('.window').on('mouseleave', function () {
+$('.mask').on('mouseleave', function () {
     time = setInterval(() => {
         n += 1
         buttons.eq(n % size).trigger('click')
