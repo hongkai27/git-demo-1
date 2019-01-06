@@ -1,35 +1,23 @@
-//鼠标点击事件
-var buttons = $('#buttons > button')
-for (let i = 0; i < buttons.length; i++) {
-    $(buttons[i]).on('click', function (x) {
-        var index = $(x.currentTarget).index()//自动寻找到属于第几个值并返回值
-        var p = index * -300
-        $('#images').css({                    //历史遗留问题，只能这样用CSS
-            transform: 'translate(' + p + 'px)'
-        })
-        n = index
-        buttons.eq(n).addClass('red').siblings('.red')//siblings只能接受选择器，而不是字符串
-        .removeClass('red')
-    })
-}
-//自动轮播
-var n = 0
-var size = buttons.length
-buttons.eq(n % size).trigger('click')//eq是找出对应DOM对象包装成jq对象、trigger是自动执行后面的命令
-var time = setInterval(() => {       //相当于定闹钟
-    n += 1        //表示n = n + 1
-    buttons.eq(n % size).trigger('click')
-        .addClass('red').siblings('.red').removeClass('red')
-}, 2500)
+$('.images > img:nth-child(1)').addClass('current')
+$('.images > img:nth-child(2)').addClass('ready')
+$('.images > img:nth-child(3)').addClass('ready')
+let n = 1
 
-//鼠标移动事件
-$('.mask').on('mouseenter', function () {
-    window.clearInterval(time)//window是系统属性，也可以不加（window.)，和上面的选择器无关
-})
-$('.mask').on('mouseleave', function () {
-    time = setInterval(() => {
-        n += 1
-        buttons.eq(n % size).trigger('click')
-            .addClass('red').siblings('.red').removeClass('red')
-    }, 2500)
-})
+setInterval(() => {
+    $(`.images > img:nth-child(${x(n)})`).removeClass('current').addClass('leave')
+        .one('transitionend', (x) => {
+            $(x.currentTarget).removeClass('leave').addClass('ready')
+        })
+    $(`.images > img:nth-child(${x(n + 1)})`).removeClass('ready').addClass('current')
+    n += 1
+}, 3000)
+
+function x(n) {
+    if (n > 3) {
+        n = n % 3
+        if(n===0){
+            n = 3
+        }
+    }
+    return n
+}
