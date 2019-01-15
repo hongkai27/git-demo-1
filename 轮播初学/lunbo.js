@@ -11,7 +11,7 @@ let timer = setInterval(() => {
 }, 3000)
 
 
-document.addEventListener('visibilitychange', function () {
+document.addEventListener('visibilitychange', function () {//用户不观看网页时就不动
     if (document.hidden) {
         window.clearInterval(timer)
     } else {
