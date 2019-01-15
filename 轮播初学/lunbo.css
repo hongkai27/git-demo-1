@@ -29,5 +29,5 @@ img{
     transform: translateX(100%)
 }
 .leave{
-    transform: translateX(-100%)
+    transform: translateX(-100%);
 }
