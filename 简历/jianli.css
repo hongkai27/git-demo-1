@@ -290,6 +290,7 @@ body .introduce{
 }
 .portfolio{
     text-align: center;
+    position: relative;
 }
 .portfolio .portfoliolist{
     display: inline-block;
@@ -347,7 +348,21 @@ body .introduce{
 .portfolio .works .small{
     position: absolute;
 }
-.swiper-container {
-    width: 800px;
-    height: 600px;
+.portfolio .swiper-container {
+    width: 400px;
+    height: 300px;
+}
+.portfolio .swiper-button-prev,
+.portfolio .swiper-button-next
+{
+    background-color: #EFEFEF;
+    right: auto;
+    left: 132px;
+    width: 34px;
+    height: 30px;
+    top: 60%;
+}
+.portfolio .swiper-button-next{
+    right: 132px;
+    left: auto;
 }
