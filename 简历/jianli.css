@@ -6,7 +6,7 @@
   a{
       text-decoration: none;
   }
-  ul{
+  ul,ol{
     list-style: none;
   }
   h1,h2,h3, h4,h5,h6{
@@ -242,13 +242,15 @@ body .introduce{
     font-family: DFKai-SB;
 }
 .skills,
-.portfolio{
+.portfolio,
+.message{
     max-width: 780px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
 }
 .skills h2,
+.message h2,
 .portfolio h2{
     text-align: center;
     font-size: 20px;
@@ -365,4 +367,20 @@ body .introduce{
 .portfolio .swiper-button-next{
     right: 132px;
     left: auto;
+}
+.message{
+    margin-top: 80px;
+}
+.message .postMessage{
+    text-align: center;
+    margin: 20px auto;
+}
+.message  > ol{
+    background: #f4f4f4;
+    border-top: 1px solid #d1d0d0;
+    border-bottom: 1px solid #d1d0d0;
+}
+.message >ol>li{
+    padding: 16px 16px;
+    border-bottom: 1px solid #d1d0d0;
 }
