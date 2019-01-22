@@ -372,8 +372,19 @@ body .introduce{
     margin-top: 80px;
 }
 .message .postMessage{
-    text-align: center;
     margin: 20px auto;
+    padding: 5px 0;
+}
+
+.message .postMessage .visiterName{
+    width: 100px;
+    margin: 0 8px;
+    line-height: 20px;
+}
+.message .postMessage .visiterMessage{
+    width: 380px;
+    margin: 0 8px;
+    line-height: 20px;
 }
 .message  > ol{
     background: #f4f4f4;
@@ -384,3 +395,4 @@ body .introduce{
     padding: 16px 16px;
     border-bottom: 1px solid #d1d0d0;
 }
+
