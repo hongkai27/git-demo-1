@@ -1,11 +1,21 @@
 !function () {
-  var APP_ID = 'FMSL4j7PnQPfIBaNQhVC9mw1-gzGzoHsz';
-  var APP_KEY = 'Rzj5LwGFvKjkTpzTQPakSkeB';
+  var view = document.querySelector('.message')
+  var control = {
+    view: null,
+    init: function (view) {
+      this.view = view
+      this.initAV()
+    },
+    initAV: function () {
+      var APP_ID = 'FMSL4j7PnQPfIBaNQhVC9mw1-gzGzoHsz';
+      var APP_KEY = 'Rzj5LwGFvKjkTpzTQPakSkeB';
+      AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+      })
+    }
+  }
 
-  AV.init({
-    appId: APP_ID,
-    appKey: APP_KEY
-  });
 
 
   let myform = document.querySelector('#postMessage')
@@ -19,24 +29,15 @@
       'name': name,
       'content': content//用户输入的内容
     }).then(function (x) {
-      let li = document.createElement('li')
-      li.innerText = `${x.attributes.name}:${x.attributes.content}`
+      let li = document.createElement('li')//注意：模板字符串中的${}表示占位符，不是JQ中的$
+      li.innerText = `${x.attributes.name}:${x.attributes.content}`//不刷新页面，直接添加留言
       let messageList = document.querySelector('#messageList')
       messageList.append(li)//append和appendChild现在都可用
       myform.querySelector('input[name=content]').value = ''   //输入内容提交后清空
       myform.querySelector('input[name=name]').value = ''
     })
   })
-
-  /*var TestObject = AV.Object.extend('TestObject');//新建一个表单,表单名字是TestObject
-  var testObject = new TestObject();
-  testObject.save({//在表中新建一行数据，内容为HELLO WORLD ，保存成功，就运行alert
-    words: 'Hello World!'
-  }).then(function(object) {
-    alert('LeanCloud Rocks!');
-  })
-  */
-
+//展示留言
   var query = new AV.Query('Message');//表单在上一步已经建好了
   query.find()//执行Message函数，代码框架照抄
     .then(
@@ -59,4 +60,5 @@
       () => { },
       (error) => []
     )
+
 }.call()
