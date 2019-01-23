@@ -4,13 +4,11 @@
     for (let i = 0; i < specialTags.length; i++) {
         specialTags[i].classList.add('offset')
     }
-
     //页面滑动后导航栏定位在顶部
     setTimeout(function () {
         donghua()
     }, 500)
-
-
+    
     window.addEventListener('scroll', function (xxx) {
         donghua()
     })

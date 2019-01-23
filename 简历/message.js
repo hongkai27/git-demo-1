@@ -42,12 +42,14 @@
     .then(
       function (messages) {//这个messages是我们获取的信息，一个数组，系统传给我们的，不是我们设置的参数
         let array = messages.map((item) => item.attributes)//map一下，返回item每一项的attributes，形成一个新的数组
-        array.forEach((item) => {                 //遍历一下数组里面的每一个item
+        array.forEach(
+          (item) => {                 //遍历一下数组里面的每一个item
           let li = document.createElement('li')
           li.innerText = `${item.name}:${item.content}`
           let messageList = document.querySelector('#messageList')
           messageList.append(li)//append和appendChild现在都可用
-        })
+        }
+        )
       },
       function (error) {
         alert('提交失败')
