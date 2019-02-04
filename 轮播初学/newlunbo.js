@@ -1,32 +1,32 @@
 //无缝轮播
 let $buttons = $('#buttons >button')
-let $slides = $('#slides')
-let $images = $slides.children('img')
+let slides = $('#slides')
+let $images = slides.children('img')
 let $firstcopy = $images.eq(0).clone(true)
 let $lastcopy = $images.eq($images.length - 1).clone(true)//加true就表示包括他的子元素都复制
 
-$slides.append($firstcopy)//在img后面加第一张图作为伪图，append是指在后面按顺序加
-$slides.prepend($lastcopy)//在img前面加最后一张图作为伪图，prepend是指在前面添加
-$slides.css({ transform: 'translateX(-400px)' })
+slides.append($firstcopy)//在img后面加第一张图作为伪图，append是指在后面按顺序加
+slides.prepend($lastcopy)//在img前面加最后一张图作为伪图，prepend是指在前面添加
+slides.css({ transform: 'translateX(-400px)' })
 let current = 0
 
 bindEvents()
 
-$('#next').on('click',function(){
+$('#next2').on('click',function(){
     move(current + 1)
     console.log(current)
 })
-$(previous).on('click',function(){//故意不加引号是为了证明在jq语法$中 id不加引号也能正常使用，声明过得变量也不需要
+$(previous2).on('click',function(){//故意不加引号是为了证明在jq语法$中 id不加引号也能正常使用，声明过得变量也不需要
     move(current - 1)
     console.log(current)
 })//手动换图****************
 
 
-
+/*
 let time = setInterval(function(){
     move(current + 1)
 },2000)//自动轮播*****************
-
+*/
 
 document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
@@ -38,7 +38,7 @@ document.addEventListener('visibilitychange', function () {
     }
 })
 
-
+/*
 $(cover).on('mouseenter',function(){//故意不加引号是为了证明在jq语法$中 id不加引号也能正常使用
     window.clearInterval(time)
 }).on('mouseleave',function(){
@@ -46,10 +46,10 @@ $(cover).on('mouseenter',function(){//故意不加引号是为了证明在jq语�
         move(current + 1)
     },2000)
 })
-
+*/
 
 function bindEvents() {
-    $('#buttons').on('click', 'button', function (e) {
+    $buttons.on('click',  function (e) { 
         let index =$(e.currentTarget).index()
         move(index)
     })
@@ -61,23 +61,23 @@ function move(number){
         number = $buttons.length - 1
     }
     if (current === $buttons.length - 1 && number === 0) {//当前是最后一张要去第一张
-        $slides.css({ transform: `translateX(${-($buttons.length + 1) * 400}px)` })//往后移到最后一张伪图
+        slides.css({ transform: `translateX(${-($buttons.length + 1) * 400}px)` })//往后移到最后一张伪图
             .one('transitionend', function () {
-                $slides.hide()
-                    .offset()
-                $slides.css({ transform: `translateX(${-(number + 1) * 400}px)` })
-                    .show()
+                slides.hide()//图片移动结束后迅速隐藏并转换translateX位置
+                .offset()//在计算top、left的时候会趁机让hide和show完成转换
+                slides.css({ transform: `translateX(${-(number + 1) * 400}px)` })
+                    .show()//hide和show后面有隐藏参数毫秒，不设置的话就是最短时间、立即执行
             })
     } else if (current === 0 && number === $buttons.length - 1) {
-        $slides.css({ transform: 'translateX(0px)' })//第一张去最后一张，移到前一张伪图
+        slides.css({ transform: 'translateX(0px)' })//第一张去最后一张，移到前一张伪图
             .one('transitionend', function () {
-                $slides.hide()
-                    .offset()
-                $slides.css({ transform: `translateX(${-(number + 1) * 400}px)` })
+                slides.hide()
+                .offset()
+                slides.css({ transform: `translateX(${-(number + 1) * 400}px)` })
                     .show()
             })
     } else {
-        $slides.css({ transform: `translateX(${-(number + 1) * 400}px)` })
+        slides.css({ transform: `translateX(${-(number + 1) * 400}px)` })
     }
     current = number
 }

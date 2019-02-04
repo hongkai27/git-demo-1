@@ -1,9 +1,6 @@
 let n
 y()
-<<<<<<< HEAD
 
-=======
->>>>>>> 03e6022d13f943ff58d99b40677652e9d71b7eda
 
 let timer = setInterval(() => {
     $(`.images > img:nth-child(${x(n)})`).removeClass('current').addClass('leave')
