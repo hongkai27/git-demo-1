@@ -294,82 +294,21 @@ body .introduce{
     text-align: center;
     position: relative;
 }
-.portfolio .portfoliolist{
-    display: inline-block;
-    vertical-align: top;
+.portfolio .portfolioImg{
+    margin-top: 26px;
 }
-.portfolio .portfoliolist>li{
-    float: left;
-    margin-left: 27px; 
-    cursor: default;
+.portfolio .portfolioImg > img{
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
-.portfolio .portfoliolist>li:nth-child(1){
-    margin-left: 0;
-}
-.portfolio nav{
-    display: inline-block;
-    vertical-align: top;
-    width: 200px;
-    margin-top: 22px;
-}
-.portfolio .bar{
-    background:  rgb(168, 167, 252);
-    height: 5px;
-    margin-top: 6px;
-    border-radius: 6px;
-    margin-bottom: 18px;
-}
-.portfolio .bar .bar-inner{
-    height: 100%;
-    border-radius: 6px;
-    margin-left: 0;
-    width: 68px;
-    background: #e6686a;
-    transition: all 0.3s;
-}
-.portfolio  .bar.state-1 .bar-inner{
-    margin-left: 0;
-    width: 68px;
-    background: #e6686a;
-}
-.portfolio .bar.state-2 .bar-inner{
-    background: #e6686a;
-    margin-left: 68px;
-    width: 55px;
-}
-.portfolio .bar.state-3 .bar-inner{
-    background: #e6686a;
-    margin-left: 125px;
-    width: 75px;
-}
-.portfolio .works{
-    position: relative;
-    height: 597px;
-}
-.portfolio .works .big,
-.portfolio .works .small{
-    position: absolute;
-}
-.portfolio .swiper-container {
-    width: 400px;
-    height: 300px;
-}
-.portfolio .swiper-button-prev,
-.portfolio .swiper-button-next
-{
-    background-color: #EFEFEF;
-    right: auto;
-    left: 132px;
-    width: 34px;
-    height: 30px;
-    top: 60%;
-}
-.portfolio .swiper-button-next{
-    right: 132px;
-    left: auto;
+.portfolio .portfolioImg > p{
+    margin: 5px auto;
 }
 .message{
     margin-top: 80px;
+    
 }
 .message .postMessage{
     margin: 20px auto;
@@ -387,7 +326,7 @@ body .introduce{
     line-height: 20px;
 }
 .message  > ol{
-    background: #f4f4f4;
+    background: #dff3f7;
     border-top: 1px solid #d1d0d0;
     border-bottom: 1px solid #d1d0d0;
 }

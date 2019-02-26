@@ -13,6 +13,10 @@
     //展示数据
     show: function () {
       var query = new AV.Query('Message');//表单在上一步已经建好了
+      var now = new Date()
+      query.lessThanOrEqualTo('createdAt',now);
+      query.limit(10);
+      query.descending('createdAt')
       return query.find()//是一个promise对象,执行Message函数，代码框架照抄
     }
   }
