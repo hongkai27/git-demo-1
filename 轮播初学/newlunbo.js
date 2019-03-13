@@ -13,12 +13,10 @@ let current = 0
 bindEvents()
 
 $('#next2').on('click',function(){
-    move(current + 1)
-    console.log(current)
+    move(current + 1)  
 })
 $(previous2).on('click',function(){//故意不加引号是为了证明在jq语法$中 id不加引号也能正常使用，声明过得变量也不需要
     move(current - 1)
-    console.log(current)
 })//手动换图****************
 
 

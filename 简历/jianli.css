@@ -304,7 +304,10 @@ body .introduce{
     
 }
 .portfolio .portfolioImg > p{
-    margin: 5px auto;
+    display: inline-block;
+    margin-top: 18px ;
+    margin-bottom: 6px ;
+    padding: 6px 6px;
 }
 .message{
     margin-top: 80px;
